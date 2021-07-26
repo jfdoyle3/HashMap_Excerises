@@ -4,7 +4,6 @@ class Solution {
     
     public int majorityElement(int[] nums) {
         
-        
         // make freq map
         for(int num : nums){
             if(!freq.containsKey(num))
@@ -16,15 +15,16 @@ class Solution {
        
         // get max value of map
         int maxValue=Collections.max(freq.values());
-        int key, value;
-        
+	    
+	 // find key with max value  
+        int key=0;
         for(Map.Entry<Integer,Integer> entry : freq.entrySet()){
              key=entry.getKey();
-             value=entry.getValue();
+            int value=entry.getValue();
             if(value==maxValue)
-               return key;
+               break;
         }
       
-        return 1;
+        return key;
     }
 }
