@@ -19,10 +19,12 @@ class Solution {
 	 // find key with max value  
         int key=0;
         for(Map.Entry<Integer,Integer> entry : freq.entrySet()){
-             key=entry.getKey();
+            
             int value=entry.getValue();
-            if(value==maxValue)
-               break;
+            if(value==maxValue){
+		key=entry.getKey();
+                break;
+	    }
         }
       
         return key;
